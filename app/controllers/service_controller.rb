@@ -8,7 +8,6 @@ class ServiceController < ApplicationController
     user = User.find(params[:user_id])
     post = Post.find(params[:post_id])
     Like.create(user:, post:)
-    Like.update_counter_for_post(post)
     redirect_to user_post_path(user_id: params[:user_id], id: params[:post_id])
   end
 
@@ -20,7 +19,6 @@ class ServiceController < ApplicationController
       return
     end
     Comment.create(user: @current_user, post:, text:)
-    Comment.update_counter_for_post(post)
     redirect_to user_post_path(user_id: params[:user_id], id: params[:post_id])
   end
 end

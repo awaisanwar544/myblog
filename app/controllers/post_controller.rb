@@ -9,6 +9,8 @@ class PostController < ApplicationController
     text = params[:post][:text]
     @post = Post.new(post_params)
     @post.user = ApplicationController.current_user
+    @post.likesCounter = 0
+    @post.commentsCounter = 0
     @errors = []
     @errors.push 'Title can not be empty' if title == ''
     @errors.push 'Text can not be empty' if text == ''

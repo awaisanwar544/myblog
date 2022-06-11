@@ -3,6 +3,11 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes
 
+  validates :name, presence: { message: 'Name can not be blank' }
+  validates :postsCounter,
+            numericality: { only_integer: true, greater_than_or_equal_to: 0,
+                            message: 'postsCounter must be integer and >=0' }
+
   def three_most_recent_posts
     # method returns the 3 most recent posts by this user
     Post.where('user_id = ?', id).order(created_at: :desc).limit(3)

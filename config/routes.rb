@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 
   get '/users/:user_id/posts', to:'posts#index', as: 'user_posts'
   get '/users/:user_id/posts/:id', to:'posts#show', as: 'user_post'
+  get '/users/:user_id/post/new', to: 'post#new', as: 'post_new'
+  post '/users/:user_id/post/new', to: 'post#create'
+
+  resources :service, path: 'service/like', to:'service#like'
+  post 'service/comment', to:'service#comment', as: 'service_comment'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

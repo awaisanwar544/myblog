@@ -4,6 +4,7 @@
     <h3>Bio</h3>
     <p class='bio-info'><%=@user_info.bio%></p>
   </div>
+  <a class='all-button' href='/users/<%=@user_info.id%>/post/new'> Create new post </a>
   <%@posts.each do |post| %>
       <%= render partial: "shared/post_card", locals: {post: post, user_info: @user_info}%>
     <% end %>

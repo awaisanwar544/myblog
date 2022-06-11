@@ -1,2 +1,16 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class='container'>
+
+  <div class='post-detail'>
+    <div class='header'>
+      <p>Posts #<%=@post_info.id%>&nbsp;</p>
+      <p>by <%=@user_info.name%></p>
+      <div class='post-counters'>
+        <p>Comments: <%=@post_info.comments.count%> Likes: <%=@post_info.likesCounter%></p>
+      </div>
+    </div>
+    <p class='post-text'><%=@post_info.text%></p>
+  </div>
+  <% for comment in @post_info.comments%>
+    <p class='comment'><%=comment.user.name%>: <%=comment.text%></p>
+  <% end %>
+</div>

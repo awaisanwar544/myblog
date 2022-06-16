@@ -1,10 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe 'Post model', type: :request do
+  before(:all) do
+    user = User.create(name: 'Awais',
+                       photo: 'url',
+                       bio: 'Programmer',
+                       postsCounter: 0,
+                       email: 'test@test.com',
+                       password: 'password')
+    @post = Post.create(user:, title: 'Test', text: 'This is a test', commentsCounter: 0, likesCounter: 0)
+  end
+
+  after(:all) do
+    Post.destroy_all
+    User.destroy_all
+  end
+
   it 'Creates a valid instance' do
-    user = User.first
-    post = Post.new(user:, title: 'Test', text: 'This is a test', commentsCounter: 0, likesCounter: 0)
-    expect(post).to be_valid
+    expect(@post).to be_valid
   end
 
   it 'Creates an invalid instance due to empty title' do

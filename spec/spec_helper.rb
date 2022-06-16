@@ -90,14 +90,14 @@ RSpec.configure do |config|
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
 
-  if Bullet.enable?
-    config.before do
-      Bullet.start_request
-    end
+  # if Bullet.enable?
+  #   config.before do
+  #     Bullet.start_request
+  #   end
 
-    config.after do
-      Bullet.perform_out_of_channel_notifications if Bullet.notification?
-      Bullet.end_request
-    end
-  end
+  #   config.after do
+  #     Bullet.perform_out_of_channel_notifications if Bullet.notification?
+  #     Bullet.end_request
+  #   end
+  # end
 end

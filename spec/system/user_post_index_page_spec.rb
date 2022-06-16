@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe 'User post index page', type: :system do
   before(:all) do
     user = User.create(id: 1,
-                      name: 'Awais',
-                      photo: 'https://via.placeholder.com/150',
-                      bio: 'Programmer',
-                      postsCounter: 0,
-                      email: 'test@test.com',
-                      password: 'password')
-    Post.create(id:1, user:, title: 'Awais\' post', text: 'Test post', likesCounter: 0, commentsCounter: 0)
+                       name: 'Awais',
+                       photo: 'https://via.placeholder.com/150',
+                       bio: 'Programmer',
+                       postsCounter: 0,
+                       email: 'test@test.com',
+                       password: 'password')
+    Post.create(id: 1, user:, title: 'Awais\' post', text: 'Test post', likesCounter: 0, commentsCounter: 0)
   end
 
   after(:all) do

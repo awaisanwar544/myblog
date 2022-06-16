@@ -30,8 +30,14 @@ To get a local copy up and running follow these simple example steps.
     - run `rails db:migrate`
 ## Running the Application
 >**Steps to excute the app locally*
-  - Run `rails s` in the console at working directory
-## Authors
+  - Run `rails c` in the console at working directory.
+
+  - Run `rails s` in the the browser on local server.
+
+## Running the Tests
+>**Steps to excute the app locally*
+  - Run `rspec` in the terminal to run the tests.
+  - Make sure you have latest version of Rails installed
 
 ## Authors
 

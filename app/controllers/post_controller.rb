@@ -8,7 +8,7 @@ class PostController < ApplicationController
     title = params[:post][:title]
     text = params[:post][:text]
     @post = Post.new(post_params)
-    @post.user = ApplicationController.current_user
+    @post.user = current_user
     @post.likesCounter = 0
     @post.commentsCounter = 0
     @errors = []

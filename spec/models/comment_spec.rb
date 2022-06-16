@@ -22,6 +22,7 @@ RSpec.describe 'Comment model', type: :request do
   end
 
   it 'Update comments counter for post' do
+    post = Post.first
     Comment.update_counter_for_post(Post.first)
     expect(post.commentsCounter).to be == Comment.where(post:).count
   end

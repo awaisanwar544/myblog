@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Comment model', type: :request do
   before(:all) do
     user = User.create(id: 1,
-                      name: 'Awais',
+                       name: 'Awais',
                        photo: 'url',
                        bio: 'Programmer',
                        postsCounter: 0,

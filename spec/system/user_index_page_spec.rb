@@ -8,8 +8,7 @@ RSpec.describe 'Index page', type: :system do
                         bio: 'Programmer',
                         postsCounter: 0,
                         email: 'test@test.com',
-                        password: 'password'
-                      )
+                        password: 'password')
   end
 
   after(:all) do

@@ -3,20 +3,18 @@ require 'rails_helper'
 RSpec.describe 'User show page', type: :system do
   before(:all) do
     user = User.create(id: 1,
-                        name: 'Awais',
-                        photo: 'https://via.placeholder.com/150',
-                        bio: 'Programmer',
-                        postsCounter: 0,
-                        email: 'test@test.com',
-                        password: 'password'
-                      )
+                       name: 'Awais',
+                       photo: 'https://via.placeholder.com/150',
+                       bio: 'Programmer',
+                       postsCounter: 0,
+                       email: 'test@test.com',
+                       password: 'password')
     Post.create(id: 1,
                 title: 'Test post',
                 text: 'This is a test post',
                 commentsCounter: 0,
                 likesCounter: 0,
-                user_id: user.id
-                )
+                user_id: user.id)
   end
 
   after(:all) do
